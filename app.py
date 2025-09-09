@@ -357,5 +357,5 @@ def download_cv():
 if __name__ == '__main__':
     app.run(debug=True, host='127.0.0.1', port=5000)
 
-from Portfolio3 import app as application
+from app import app
 
