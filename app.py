@@ -81,7 +81,7 @@ portfolio = {
         {
             "role": "Admin Assistant",
             "company": "HMRC",
-            "dates": "Sept 2022 – Present",
+            "dates": "Sept 2022 – Sep 2023",
             "highlights": [
                 "Managed high-volume customer queries under pressure, applying structured problem-solving similar to debugging software.",
                 "Processed and safeguarded sensitive financial data in line with compliance frameworks, mirroring secure software engineering practices.",
@@ -100,7 +100,7 @@ portfolio = {
         {
             "role": "Charity Volunteer",
             "company": "Local Distribution Warehouse",
-            "dates": "Various",
+            "dates": "July 2018 - Sep 2018",
             "highlights": [
                 "Supported logistics and distribution for local charities in a fast-paced warehouse setting.",
                 "Strengthened teamwork, resilience, and problem-solving under time constraints."
@@ -125,7 +125,7 @@ portfolio = {
         "Microsoft Office", "DevOps fundamentals (CI/CD, version control, deployment awareness)",
         "Agile methodology (Scrum teamwork, sprint planning, iterative development)",
         "Networking & cybersecurity (Cisco Packet Tracer, secure configurations)",
-        "Data security practices (hashing, GDPR compliance, data protection)",
+        "Data security practices (hashing, GDPR compliance, data protection, Azure, Dev Ops,)",
     ],
 
     "languages": ["English (fluent)", "Arabic (fluent)"],
