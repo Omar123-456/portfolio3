@@ -3,7 +3,7 @@ import os
 
 app = Flask(__name__)
 
-# ---- Updated Portfolio Data based on new CV ----
+# ---- Portfolio Data ----
 portfolio = {
     "name": "Omar Elsharoud",
     "title": "Software Engineering Student | Aspiring Software Developer",
@@ -84,7 +84,6 @@ portfolio = {
         }
     ],
 
-    # Refactored skills to match the Categories in the new CV
     "skills_categorized": [
         {
             "category": "Languages & Web",
@@ -147,12 +146,11 @@ portfolio = {
         "Full UK Driving License (since Oct 2021)."
     ],
 
-    # Update this filename to match your actual CV filename
     "cv_path": os.path.join(os.getcwd(), 'Omar_Elsharoud_CV.docx')
 }
 
 
-# ---- Updated Interactive Template ----
+# ---- New Interactive Template ----
 TEMPLATE = """
 <!doctype html>
 <html lang="en">
@@ -160,116 +158,148 @@ TEMPLATE = """
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{{p.name}} — Portfolio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: 'Outfit', sans-serif; /* Applied new font */
       margin:0; 
       background:#0f172a; 
       color:#f1f5f9; 
-      line-height:1.8; 
+      line-height:1.6; 
       scroll-behavior:smooth;
+      font-size: 20px; /* Increased base font size */
     }
+
     section {
-      min-height:90vh; 
+      min-height: 60vh; /* Reduced gap (was 90vh) */
       display:flex; 
       flex-direction:column; 
       justify-content:center; 
       align-items:center; 
-      padding:60px 20px;
-      opacity:0; 
-      transform:translateY(50px);
-      transition: all 1s ease-out;
-      max-width: 1000px;
+      padding: 40px 20px; /* Reduced padding */
+      
+      /* Animation Initial State */
+      opacity: 0; 
+      transform: translateY(80px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      
+      max-width: 1100px;
       margin: 0 auto;
     }
+
     section.visible {
-      opacity:1; 
-      transform:translateY(0);
+      opacity: 1; 
+      transform: translateY(0);
     }
+
     h1 {
-      font-size:64px; 
-      font-weight:800; 
-      margin-bottom:20px;
+      font-size: 80px; /* Much larger heading */
+      font-weight: 800; 
+      margin-bottom: 20px;
       text-align: center;
+      background: linear-gradient(to right, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+
     h2 {
-      font-size:38px; 
-      font-weight:700; 
-      margin-bottom:30px;
-      color:#38bdf8;
-      border-bottom: 2px solid #38bdf8;
+      font-size: 48px; 
+      font-weight: 700; 
+      margin-bottom: 40px;
+      color: #38bdf8;
+      border-bottom: 3px solid #38bdf8;
       padding-bottom: 10px;
     }
+
     h3 {
-      font-size: 24px;
+      font-size: 28px;
       color: #e2e8f0;
       margin-top: 0;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      font-weight: 600;
     }
+
     p, li {
-      font-size:18px;
+      font-size: 20px; /* Larger body text */
       color: #cbd5e1;
+      font-weight: 300;
     }
+
     .text-center { text-align: center; }
     
+    /* Navigation */
     nav {
       position:fixed; 
       top:20px; 
       left:50%; 
       transform:translateX(-50%);
       display:flex; 
-      gap:20px; 
-      background:rgba(30, 41, 59, 0.9); 
-      backdrop-filter: blur(10px);
-      padding:12px 24px; 
-      border-radius:12px; 
-      box-shadow:0 4px 20px rgba(0,0,0,0.5);
+      gap:25px; 
+      background:rgba(15, 23, 42, 0.85); 
+      backdrop-filter: blur(12px);
+      padding:15px 30px; 
+      border-radius:50px; 
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow:0 10px 30px rgba(0,0,0,0.5);
       z-index:1000;
     }
     nav a {
       color:#f1f5f9; 
       text-decoration:none; 
-      font-size:16px; 
-      font-weight:600; 
+      font-size:18px; 
+      font-weight:500; 
       transition:color 0.3s;
     }
     nav a:hover {
       color:#38bdf8;
     }
     
-    /* Project & Experience Cards */
+    /* Cards with Hover Animation */
     .card {
         background: #1e293b;
-        padding: 25px;
-        border-radius: 12px;
+        padding: 30px;
+        border-radius: 20px;
         margin-bottom: 25px;
         width: 100%;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border: 1px solid #334155;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-8px); /* Lift up effect */
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        border-color: #38bdf8;
     }
     
-    ul { padding-left:20px; }
-    ul li { margin:8px 0; }
+    ul { padding-left:25px; }
+    ul li { margin:10px 0; }
     
     /* Skills Chips */
     .skill-category {
       width: 100%;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       text-align: center;
     }
     .skill-category h4 {
         color: #94a3b8;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
         font-size: 14px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        font-weight: 600;
     }
     .chip {
       display:inline-block;
-      padding:8px 16px;
+      padding:10px 20px;
       border-radius:999px;
       background:#334155;
-      margin:5px;
-      font-size:16px;
+      margin:6px;
+      font-size:18px;
       font-weight:500;
       transition: all 0.3s;
       border: 1px solid #475569;
@@ -277,31 +307,35 @@ TEMPLATE = """
     .chip:hover {
         background: #38bdf8;
         color: #0f172a;
-        transform: translateY(-2px);
+        transform: scale(1.05);
     }
 
     img.profile {
-      width:220px; 
-      height:220px; 
+      width:240px; 
+      height:240px; 
       border-radius:50%; 
-      border:6px solid #38bdf8;
+      border:8px solid #38bdf8;
       object-fit:cover; 
-      margin-bottom:20px; 
-      transition:transform 0.6s;
+      margin-bottom:30px; 
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.3);
+      transition: transform 0.5s;
     }
-    img.profile:hover {transform:scale(1.08);}
+    img.profile:hover {
+        transform: scale(1.05) rotate(2deg);
+    }
 
     footer {
-      padding:40px;
+      padding:60px 20px;
       text-align:center;
-      font-size:16px;
+      font-size:18px;
       color:#64748b;
     }
     
     @media (max-width: 768px) {
-        nav { display: none; } /* Simple hide for mobile for this demo */
-        section { padding: 40px 15px; }
-        h1 { font-size: 42px; }
+        nav { display: none; } 
+        section { padding: 40px 15px; min-height: auto; }
+        h1 { font-size: 48px; }
+        h2 { font-size: 36px; }
     }
   </style>
 </head>
@@ -318,14 +352,14 @@ TEMPLATE = """
   <section id="home">
     <img src="{{ url_for('static', filename='profile.jpg') }}" class="profile" alt="Profile Picture">
     <h1>{{p.name}}</h1>
-    <p style="font-size:24px; color:#38bdf8;">{{p.title}}</p>
+    <p style="font-size:28px; color:#38bdf8; font-weight: 500;">{{p.title}}</p>
     <p class="text-center">{{p.location}}<br>
     <a href="mailto:{{p.email}}" style="color:#f1f5f9; text-decoration: underline;">{{p.email}}</a> • {{p.phone}}</p>
   </section>
 
   <section id="profile">
     <h2>Profile</h2>
-    <p class="text-center" style="max-width: 800px;">{{p.profile}}</p>
+    <p class="text-center" style="max-width: 900px; line-height: 1.8;">{{p.profile}}</p>
   </section>
 
   <section id="skills">
@@ -367,9 +401,9 @@ TEMPLATE = """
     {% for e in p.education %}
       <div class="card" style="text-align: center;">
           <h3 style="color:#f1f5f9; margin-bottom: 5px;">{{e.degree}}</h3>
-          <p style="color:#38bdf8; margin-top:0;">{{e.institution}} | {{e.dates}}</p>
+          <p style="color:#38bdf8; margin-top:0; font-weight:600;">{{e.institution}} | {{e.dates}}</p>
           {% if e.notes %}
-            <p style="font-size:16px; color:#94a3b8; margin-top:10px;">{{e.notes}}</p>
+            <p style="font-size:18px; color:#94a3b8; margin-top:10px;">{{e.notes}}</p>
           {% endif %}
       </div>
     {% endfor %}
@@ -379,8 +413,8 @@ TEMPLATE = """
     <h2>Professional Experience</h2>
     {% for ex in p.experience %}
       <div class="card">
-        <h3>{{ex.role}} <span style="font-weight:400; font-size:18px; color:#94a3b8;">at {{ex.company}}</span></h3>
-        <p style="font-size:14px; margin-top:-10px; margin-bottom:15px; color:#38bdf8;">{{ex.dates}}</p>
+        <h3>{{ex.role}} <span style="font-weight:400; font-size:20px; color:#94a3b8;">at {{ex.company}}</span></h3>
+        <p style="font-size:16px; margin-top:-10px; margin-bottom:15px; color:#38bdf8; font-weight:600;">{{ex.dates}}</p>
         <ul>
             {% for h in ex.highlights %}
               <li>{{h}}</li>
@@ -389,10 +423,10 @@ TEMPLATE = """
       </div>
     {% endfor %}
 
-    <h2 style="margin-top: 40px;">Leadership</h2>
+    <h2 style="margin-top: 60px;">Leadership</h2>
     {% for l in p.leadership %}
       <div class="card">
-        <h3>{{l.role}} <span style="font-weight:400; font-size:18px; color:#94a3b8;">— {{l.org}}</span></h3>
+        <h3>{{l.role}} <span style="font-weight:400; font-size:20px; color:#94a3b8;">— {{l.org}}</span></h3>
         <ul>
             {% for h in l.highlights %}<li>{{h}}</li>{% endfor %}
         </ul>
@@ -406,11 +440,18 @@ TEMPLATE = """
 
   <script>
     const sections = document.querySelectorAll("section");
+    
     const observer = new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
-        if(entry.isIntersecting){ entry.target.classList.add("visible"); }
+        if(entry.isIntersecting){ 
+            entry.target.classList.add("visible"); 
+        }
       });
-    }, {threshold:0.15});
+    }, {
+        threshold: 0.15, // Trigger when 15% of the section is visible
+        rootMargin: "0px"
+    });
+
     sections.forEach(sec=>observer.observe(sec));
   </script>
 </body>
