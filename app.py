@@ -147,6 +147,7 @@ portfolio = {
         "Full UK Driving License (since Oct 2021)."
     ],
 
+    # Update this filename to match your actual CV filename
     "cv_path": os.path.join(os.getcwd(), 'Omar_Elsharoud_CV.docx')
 }
 
@@ -333,7 +334,7 @@ TEMPLATE = """
       <div class="skill-category">
         <h4>{{ cat.category }}</h4>
         <div>
-            {% for item in cat.items %}
+            {% for item in cat['items'] %}
                 <span class="chip">{{ item }}</span>
             {% endfor %}
         </div>
