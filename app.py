@@ -3,28 +3,29 @@ import os
 
 app = Flask(__name__)
 
-
+# ---- Updated Portfolio Data based on new CV ----
 portfolio = {
     "name": "Omar Elsharoud",
-    "title": "Software Engineering Student | Software Developer",
+    "title": "Software Engineering Student | Aspiring Software Developer",
     "location": "Cardiff, Wales, CF3 6YP",
-    "email": "o.elsharoud@gmail.com",
+    "email": "f.elsharoud@gmail.com",
     "phone": "+44 7881 851872",
 
     "profile": (
-        "Motivated and detail-oriented Software Engineering student with strong practical experience "
-        "delivering software projects in both academic and independent settings. Proven ability to lead "
-        "teams, design intuitive user interfaces, implement secure systems, and fine-tune AI solutions. "
-        "Knowledgeable in Agile methodology and DevOps practices with hands-on networking experience using Cisco Packet Tracer. "
-        "Skilled in handling sensitive data, problem-solving under pressure, and delivering user-focused solutions. "
-        "Currently seeking a graduate opportunity to apply and grow technical expertise within a fast-paced, innovative environment."
+        "Motivated and detail-oriented Software Engineering student with a strong foundation in the "
+        "Full Software Development Lifecycle (SDLC). Possess strong practical experience delivering "
+        "software projects in both academic and independent settings. Proficient in Microsoft Windows "
+        "Platform development, with a solid understanding of OS architecture, services, and security features. "
+        "Proven ability to lead teams, implement secure systems, and execute comprehensive unit and software testing. "
+        "Seeking a graduate opportunity to apply technical expertise in a fast-paced, innovative environment."
     ),
 
     "education": [
         {
             "degree": "BSc (Hons) Software Engineering",
             "institution": "Cardiff Metropolitan University",
-            "dates": "Sept 2023 – Present"
+            "dates": "Sept 2023 – Present",
+            "notes": "Relevant Modules: Operating Systems, Advanced Programming, Database Management."
         },
         {
             "degree": "A-Levels & Equivalent",
@@ -32,50 +33,80 @@ portfolio = {
             "dates": "Sept 2018 – June 2022",
             "notes": (
                 "Subjects: Mathematics, Chemistry, Physics, ICT, Biology, Design & Technology, "
-                "Business, English Language, English Literature, Arabic, Welsh, Skills Challenge"
+                "Business."
             )
         }
     ],
 
     "projects": [
         {
-            "title": "Welsh Museums Mobile App",
+            "title": "QuizCraft – Online Assessment Platform",
             "items": [
-                "Designed and implemented UI/UX independently, ensuring accessibility and bilingual (English/Welsh) support.",
-                "Integrated Google Maps API for location and street view functionality.",
-                "Built a user-friendly digital resource hub to enhance cultural engagement."
+                "Architected a secure web application using PHP 8.0 and MySQL, adhering to a strict MVC (Model-View-Controller) architecture to ensure scalable code organization.",
+                "Engineered a Directed Graph data structure to handle conditional logic, enabling complex branching paths where user answers dictate the next question.",
+                "Implemented core Design Patterns including the Singleton Pattern for optimized database connections and the Factory Pattern for dynamic question rendering.",
+                "Ensured system reliability and security by writing comprehensive Unit and Integration tests using PHPUnit and utilizing PDO Prepared Statements to prevent SQL injection."
             ]
         },
         {
-            "title": "Caravan Rental Website (Team Project – Lead Developer)",
+            "title": "Mental Health Support Platform (Team Lead)",
             "items": [
-                "Led a small team to build a dynamic rental website using PHP, JavaScript, and SQL.",
-                "Implemented a featured slider to highlight available rentals.",
-                "Applied early knowledge of databases and back-end logic, laying foundations for advanced booking systems."
+                "Oversaw the Full Development Lifecycle, from requirement gathering to deployment and testing.",
+                "Developed a secure web app with user authentication (PHP sessions) and SQL database hashing.",
+                "Conducted unit testing on booking algorithms and security features to ensure data integrity.",
+                "Managed the project codebase using GitHub, ensuring version control and smooth collaboration.",
+                "Fine-tuned an AI chatbot for ethical interaction regarding sensitive mental health queries."
             ]
         },
         {
             "title": "Medical Chatbot for NHS Triage",
             "items": [
-                "Developed a web-based chatbot powered by AI APIs, trained and fine-tuned to provide accurate triage guidance.",
-                "Configured custom filters and training loops to minimise inappropriate responses.",
-                "Conducted iterative testing to refine accuracy and ensure patient safety."
+                "Developed a web-based chatbot using AI APIs, fine-tuned for accurate triage guidance.",
+                "Implemented rigorous software testing protocols to refine answers, limiting inappropriate responses through custom filters.",
+                "Focused on safety and reliability, mirroring critical system architecture standards."
             ]
         },
         {
-            "title": "Mental Health Support Platform (Team Project – Project Lead)",
+            "title": "Caravan Rental Website (Lead Developer)",
             "items": [
-                "Oversaw design and development of a mental health support platform with secure SQL database and hashed authentication.",
-                "Implemented booking system for therapy sessions and personal mood tracking.",
-                "Custom-trained the AI chatbot to respond sensitively and ethically to mental health queries."
+                "Led a team to build a dynamic rental website using PHP, JavaScript, and SQL.",
+                "Utilized Agile methodologies for sprint planning and iterative development.",
+                "Implemented back-end logic and database structures that laid the foundation for advanced booking systems."
+            ]
+        },
+        {
+            "title": "Welsh Museums Mobile App",
+            "items": [
+                "Designed and implemented UI/UX independently, ensuring accessibility and bilingual support.",
+                "Integrated Google Maps API for location functionality.",
+                "Managed source code and feature updates via GitHub."
             ]
         }
     ],
 
-    "networking_security": (
-        "Hands-on practical experience with networking and cybersecurity principles "
-        "using Cisco Packet Tracer, including configuration, troubleshooting, and secure design."
-    ),
+    # Refactored skills to match the Categories in the new CV
+    "skills_categorized": [
+        {
+            "category": "Languages & Web",
+            "items": ["Python", "Java", "PHP", "JavaScript", "HTML", "CSS", "SQL (MySQL)"]
+        },
+        {
+            "category": "Windows Ecosystem",
+            "items": ["Microsoft Windows Platform Development", "Windows OS Architecture", "Development Frameworks", "System Services", "Security Features"]
+        },
+        {
+            "category": "DevOps & Tools",
+            "items": ["GitHub (Branching, PRs)", "Git", "Version Control", "CI/CD Awareness", "Cisco Packet Tracer"]
+        },
+        {
+            "category": "Methodologies & Testing",
+            "items": ["Agile (Scrum)", "Full SDLC Management", "Unit Testing", "Software Testing (Integration/System)", "Debugging"]
+        },
+        {
+            "category": "Security",
+            "items": ["Data Hashing", "Secure Session Management", "GDPR Compliance Awareness"]
+        }
+    ],
 
     "experience": [
         {
@@ -83,27 +114,17 @@ portfolio = {
             "company": "HMRC",
             "dates": "Sept 2022 – Sep 2023",
             "highlights": [
-                "Managed high-volume customer queries under pressure, applying structured problem-solving similar to debugging software.",
-                "Processed and safeguarded sensitive financial data in line with compliance frameworks, mirroring secure software engineering practices.",
-                "Developed strong attention to detail, process optimisation, and resilience in high-stakes environments."
-            ]
-        },
-        {
-            "role": "Customer Assistant",
-            "company": "Tesco",
-            "dates": "June 2022 – Aug 2022",
-            "highlights": [
-                "Delivered frontline customer support with a user-first mindset.",
-                "Collaborated in agile teams to resolve issues efficiently, reflecting agile workflows in tech environments."
+                "Managed high-volume customer queries, applying structured problem-solving similar to software debugging.",
+                "Processed sensitive data in line with strict compliance frameworks, mirroring security practices in software engineering.",
+                "Gained strong skills in process optimization and working under pressure."
             ]
         },
         {
             "role": "Charity Volunteer",
             "company": "Local Distribution Warehouse",
-            "dates": "July 2018 - Sep 2018",
+            "dates": "July 2018 – Sep 2018",
             "highlights": [
-                "Supported logistics and distribution for local charities in a fast-paced warehouse setting.",
-                "Strengthened teamwork, resilience, and problem-solving under time constraints."
+                "Supported logistics and distribution, strengthening teamwork and communication skills."
             ]
         }
     ],
@@ -113,34 +134,24 @@ portfolio = {
             "role": "Scout Leader",
             "org": "Scouts Association (Ongoing)",
             "highlights": [
-                "Organised and led multiple camps and hikes, ensuring safety and logistics for groups.",
-                "Mentored children in outdoor and team-based activities, building resilience and collaboration.",
-                "Transferred leadership skills into technical project settings, guiding development teams effectively."
+                "Organized and led camps and hikes, ensuring safety and logistics.",
+                "Mentored youth, fostering teamwork, resilience, and problem-solving.",
+                "Transferred leadership skills into technical settings by guiding development teams and delegating tasks effectively."
             ]
         }
     ],
 
-    "skills": [
-        "Python", "Java", "PHP", "JavaScript", "HTML", "CSS", "MySQL", "Android development",
-        "Microsoft Office", "DevOps fundamentals (CI/CD, version control, deployment awareness)",
-        "Agile methodology (Scrum teamwork, sprint planning, iterative development)",
-        "Networking & cybersecurity (Cisco Packet Tracer, secure configurations)",
-        "Data security practices (hashing, GDPR compliance, data protection, Azure, Dev Ops,)",
-    ],
-
-    "languages": ["English (fluent)", "Arabic (fluent)"],
+    "languages": ["English (Bilingual)", "Arabic (Bilingual)"],
 
     "additional_info": [
-        "Full UK Driving License (since Oct 2021)",
-        "Amateur photographer — edit and publish work on social media",
-        "Strong interest in AI, cybersecurity, and scalable web applications"
+        "Full UK Driving License (since Oct 2021)."
     ],
 
-    "cv_path": os.path.join(os.getcwd(), 'Omar_Elsharoud_CV 2026.docx')
+    "cv_path": os.path.join(os.getcwd(), 'Omar_Elsharoud_CV.docx')
 }
 
 
-# ---- New interactive template ----
+# ---- Updated Interactive Template ----
 TEMPLATE = """
 <!doctype html>
 <html lang="en">
@@ -150,7 +161,7 @@ TEMPLATE = """
   <title>{{p.name}} — Portfolio</title>
   <style>
     body {
-      font-family: 'Inter', Arial, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       margin:0; 
       background:#0f172a; 
       color:#f1f5f9; 
@@ -158,15 +169,17 @@ TEMPLATE = """
       scroll-behavior:smooth;
     }
     section {
-      min-height:100vh; 
+      min-height:90vh; 
       display:flex; 
       flex-direction:column; 
       justify-content:center; 
       align-items:center; 
-      padding:80px 20px;
+      padding:60px 20px;
       opacity:0; 
       transform:translateY(50px);
       transition: all 1s ease-out;
+      max-width: 1000px;
+      margin: 0 auto;
     }
     section.visible {
       opacity:1; 
@@ -176,18 +189,28 @@ TEMPLATE = """
       font-size:64px; 
       font-weight:800; 
       margin-bottom:20px;
+      text-align: center;
     }
     h2 {
-      font-size:42px; 
+      font-size:38px; 
       font-weight:700; 
-      margin-bottom:20px;
+      margin-bottom:30px;
       color:#38bdf8;
+      border-bottom: 2px solid #38bdf8;
+      padding-bottom: 10px;
+    }
+    h3 {
+      font-size: 24px;
+      color: #e2e8f0;
+      margin-top: 0;
+      margin-bottom: 10px;
     }
     p, li {
-      font-size:22px;
-      max-width:900px;
-      text-align:center;
+      font-size:18px;
+      color: #cbd5e1;
     }
+    .text-center { text-align: center; }
+    
     nav {
       position:fixed; 
       top:20px; 
@@ -195,7 +218,8 @@ TEMPLATE = """
       transform:translateX(-50%);
       display:flex; 
       gap:20px; 
-      background:#1e293b; 
+      background:rgba(30, 41, 59, 0.9); 
+      backdrop-filter: blur(10px);
       padding:12px 24px; 
       border-radius:12px; 
       box-shadow:0 4px 20px rgba(0,0,0,0.5);
@@ -204,26 +228,57 @@ TEMPLATE = """
     nav a {
       color:#f1f5f9; 
       text-decoration:none; 
-      font-size:18px; 
+      font-size:16px; 
       font-weight:600; 
       transition:color 0.3s;
     }
     nav a:hover {
       color:#38bdf8;
     }
-    ul {list-style: none; padding:0;}
-    ul li {margin:10px 0;}
+    
+    /* Project & Experience Cards */
+    .card {
+        background: #1e293b;
+        padding: 25px;
+        border-radius: 12px;
+        margin-bottom: 25px;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    ul { padding-left:20px; }
+    ul li { margin:8px 0; }
+    
+    /* Skills Chips */
+    .skill-category {
+      width: 100%;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+    .skill-category h4 {
+        color: #94a3b8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
     .chip {
       display:inline-block;
-      padding:12px 18px;
+      padding:8px 16px;
       border-radius:999px;
-      background:#1e293b;
-      margin:6px;
-      font-size:18px;
-      font-weight:600;
-      transition:transform 0.3s;
+      background:#334155;
+      margin:5px;
+      font-size:16px;
+      font-weight:500;
+      transition: all 0.3s;
+      border: 1px solid #475569;
     }
-    .chip:hover {transform:scale(1.1);}
+    .chip:hover {
+        background: #38bdf8;
+        color: #0f172a;
+        transform: translateY(-2px);
+    }
+
     img.profile {
       width:220px; 
       height:220px; 
@@ -234,11 +289,18 @@ TEMPLATE = """
       transition:transform 0.6s;
     }
     img.profile:hover {transform:scale(1.08);}
+
     footer {
       padding:40px;
       text-align:center;
-      font-size:18px;
-      color:#94a3b8;
+      font-size:16px;
+      color:#64748b;
+    }
+    
+    @media (max-width: 768px) {
+        nav { display: none; } /* Simple hide for mobile for this demo */
+        section { padding: 40px 15px; }
+        h1 { font-size: 42px; }
     }
   </style>
 </head>
@@ -246,80 +308,95 @@ TEMPLATE = """
   <nav>
     <a href="#home">Home</a>
     <a href="#profile">Profile</a>
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
-    <a href="#leadership">Leadership</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
   </nav>
 
   <section id="home">
-    <img src="{{ url_for('static', filename='profile.jpg') }}" class="profile">
+    <img src="{{ url_for('static', filename='profile.jpg') }}" class="profile" alt="Profile Picture">
     <h1>{{p.name}}</h1>
-    <p style="font-size:28px;">{{p.title}}</p>
-    <p>{{p.location}} • <a href="mailto:{{p.email}}" style="color:#38bdf8">{{p.email}}</a> • {{p.phone}}</p>
+    <p style="font-size:24px; color:#38bdf8;">{{p.title}}</p>
+    <p class="text-center">{{p.location}}<br>
+    <a href="mailto:{{p.email}}" style="color:#f1f5f9; text-decoration: underline;">{{p.email}}</a> • {{p.phone}}</p>
   </section>
 
   <section id="profile">
     <h2>Profile</h2>
-    <p>{{p.profile}}</p>
+    <p class="text-center" style="max-width: 800px;">{{p.profile}}</p>
   </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    {% for e in p.education %}
-      <p><strong>{{e.degree}}</strong> — {{e.institution}} ({{e.dates}})</p>
-      {% if e.notes %}<p style="font-size:20px;color:#94a3b8">{{e.notes}}</p>{% endif %}
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    {% for cat in p.skills_categorized %}
+      <div class="skill-category">
+        <h4>{{ cat.category }}</h4>
+        <div>
+            {% for item in cat.items %}
+                <span class="chip">{{ item }}</span>
+            {% endfor %}
+        </div>
+      </div>
     {% endfor %}
+    
+    <div style="margin-top: 40px; text-align: center;">
+        <h4>Languages & Additional</h4>
+        {% for l in p.languages %}<span class="chip" style="background: #38bdf8; color: #0f172a;">{{l}}</span>{% endfor %}
+        {% for info in p.additional_info %}<span class="chip" style="background: #38bdf8; color: #0f172a;">{{info}}</span>{% endfor %}
+    </div>
   </section>
 
   <section id="projects">
     <h2>Technical Projects</h2>
     {% for proj in p.projects %}
-      <p><strong>{{proj.title}}</strong></p>
-      <ul>
-        {% for item in proj["items"] %}
-          <li>{{item}}</li>
-        {% endfor %}
-      </ul>
+      <div class="card">
+          <h3 style="color:#38bdf8;">{{proj.title}}</h3>
+          <ul>
+            {% for item in proj["items"] %}
+              <li>{{item}}</li>
+            {% endfor %}
+          </ul>
+      </div>
+    {% endfor %}
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    {% for e in p.education %}
+      <div class="card" style="text-align: center;">
+          <h3 style="color:#f1f5f9; margin-bottom: 5px;">{{e.degree}}</h3>
+          <p style="color:#38bdf8; margin-top:0;">{{e.institution}} | {{e.dates}}</p>
+          {% if e.notes %}
+            <p style="font-size:16px; color:#94a3b8; margin-top:10px;">{{e.notes}}</p>
+          {% endif %}
+      </div>
     {% endfor %}
   </section>
 
   <section id="experience">
     <h2>Professional Experience</h2>
     {% for ex in p.experience %}
-      <p><strong>{{ex.role}}</strong> — {{ex.company}} ({{ex.dates}})</p>
-      <ul>
-        {% for h in ex.highlights %}
-          <li>{{h}}</li>
-        {% endfor %}
-      </ul>
+      <div class="card">
+        <h3>{{ex.role}} <span style="font-weight:400; font-size:18px; color:#94a3b8;">at {{ex.company}}</span></h3>
+        <p style="font-size:14px; margin-top:-10px; margin-bottom:15px; color:#38bdf8;">{{ex.dates}}</p>
+        <ul>
+            {% for h in ex.highlights %}
+              <li>{{h}}</li>
+            {% endfor %}
+        </ul>
+      </div>
     {% endfor %}
-  </section>
 
-
-
-  <section id="leadership">
-    <h2>Leadership & Volunteering</h2>
+    <h2 style="margin-top: 40px;">Leadership</h2>
     {% for l in p.leadership %}
-      <p><strong>{{l.role}}</strong> — {{l.org}}</p>
-      <ul>
-        {% for h in l.highlights %}<li>{{h}}</li>{% endfor %}
-      </ul>
+      <div class="card">
+        <h3>{{l.role}} <span style="font-weight:400; font-size:18px; color:#94a3b8;">— {{l.org}}</span></h3>
+        <ul>
+            {% for h in l.highlights %}<li>{{h}}</li>{% endfor %}
+        </ul>
+      </div>
     {% endfor %}
-  </section>
-  
-    <section id="skills">
-    <h2>Skills & Additional Info</h2>
-    <div>
-      {% for s in p.skills %}<span class="chip">{{s}}</span>{% endfor %}
-    </div>
-    <div style="margin-top:20px">
-      {% for l in p.languages %}<span class="chip">{{l}}</span>{% endfor %}
-    </div>
-    <div style="margin-top:20px">
-      {% for add in p.additional_info %}<p>{{add}}</p>{% endfor %}
-    </div>
   </section>
 
   <footer>
@@ -327,19 +404,17 @@ TEMPLATE = """
   </footer>
 
   <script>
-    // scroll animation
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){ entry.target.classList.add("visible"); }
       });
-    }, {threshold:0.2});
+    }, {threshold:0.15});
     sections.forEach(sec=>observer.observe(sec));
   </script>
 </body>
 </html>
 """
-
 
 @app.route('/')
 def index():
@@ -356,6 +431,3 @@ def download_cv():
 
 if __name__ == '__main__':
     app.run(debug=True, host='127.0.0.1', port=5000)
-
-from app import app
-
