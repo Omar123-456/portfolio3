@@ -3,7 +3,6 @@ import os
 
 app = Flask(__name__)
 
-# ---- Portfolio Data ----
 portfolio = {
     "name": "Omar Elsharoud",
     "title": "Software Engineering Student | Aspiring Software Developer",
@@ -40,12 +39,42 @@ portfolio = {
 
     "projects": [
         {
-            "title": "QuizCraft – Online Assessment Platform",
+            "title": "Dar Ul Isra Website (darulisra.org.uk)",
             "items": [
-                "Architected a secure web application using PHP 8.0 and MySQL, adhering to a strict MVC (Model-View-Controller) architecture to ensure scalable code organization.",
-                "Engineered a Directed Graph data structure to handle conditional logic, enabling complex branching paths where user answers dictate the next question.",
-                "Implemented core Design Patterns including the Singleton Pattern for optimized database connections and the Factory Pattern for dynamic question rendering.",
-                "Ensured system reliability and security by writing comprehensive Unit and Integration tests using PHPUnit and utilizing PDO Prepared Statements to prevent SQL injection."
+                "Developed and maintain the official community website (darulisra.org.uk) using WordPress, serving as a central digital hub for the local community.",
+                "Integrated dynamic functionality including automated prayer timetables, event management calendars, and secure donation gateways.",
+                "Optimized the UI/UX for accessibility, mobile responsiveness, and SEO, ensuring critical community information is easily accessible to a diverse user base."
+            ]
+        },
+        {
+            "title": "AccomFix – Full-Stack Property Management System",
+            "items": [
+                "Developed a full-stack web application using the LAMP stack (PHP, MySQL, HTML/CSS/JS) to streamline maintenance reporting and triage in the student housing sector.",
+                "Engineered a custom 'Link Code' multi-tenancy architecture, enabling secure, frictionless onboarding between independent landlords and tenant clusters.",
+                "Implemented a priority-based ticketing workflow featuring secure multipart file uploads for visual evidence and a real-time, AJAX-driven live messaging system.",
+                "Designed a role-based administrative dashboard utilizing SQL aggregate functions for real-time issue analytics, status management, and CSV data exportation.",
+                "Enforced strict web security best practices, utilizing Bcrypt for password hashing and PDO prepared statements to mitigate SQL injection vulnerabilities."
+            ]
+        },
+        {
+            "title": "CampusTasker – Full-Stack Web Application",
+            "items": [
+                "Engineered a full-stack, localized micro-job marketplace using PHP, MySQL, JavaScript, HTML, and CSS to connect community residents with university students.",
+                "Integrated third-party APIs (Postcodes.io and Leaflet.js) using PHP cURL to build an interactive spatial mapping system that dynamically geocodes locations and calculates real-time distances between users and tasks.",
+                "Designed a secure, relational database schema and implemented PDO prepared statements to prevent SQL injection vulnerabilities, alongside robust error-handling for API timeouts.",
+                "Built an asynchronous, peer-to-peer messaging system and dynamic marketplace filters using the JavaScript Fetch API, enabling real-time UI updates and data polling without full-page reloads.",
+                "Applied the POST/Redirect/GET (PRG) architectural pattern to ensure secure state management and prevent duplicate database entries during form submissions."
+            ]
+        },
+        {
+            "title": "QuizCraft – Full-Stack Quiz Management Platform (PHP, MySQL, Vanilla JS, HTML5, CSS3)",
+            "items": [
+                "Developed a dynamic, custom MVC-architected web application that enables users to create, publish, and evaluate interactive quizzes.",
+                "Designed a normalized relational database schema using PDO to securely manage users, complex quiz structures, dynamic multiple-choice options, and submission data.",
+                "Engineered advanced quiz flow logic, including conditional branching (allowing distinct 'next question' paths based on user selection) and automated grading systems.",
+                "Built a highly interactive front-end utilizing Vanilla JavaScript for real-time DOM manipulation, enabling users to dynamically add, edit, and remove form elements without page reloads.",
+                "Secured the application with robust, session-based user authentication, state management, and prepared SQL statements to prevent injection vulnerabilities.",
+                "Created a centralized creator dashboard to manage content and review user submissions, featuring side-by-side comparisons of submitted text answers against defined model answers."
             ]
         },
         {
@@ -87,7 +116,7 @@ portfolio = {
     "skills_categorized": [
         {
             "category": "Languages & Web",
-            "items": ["Python", "Java", "PHP", "JavaScript", "HTML", "CSS", "SQL (MySQL)"]
+            "items": ["Python", "Java", "PHP", "JavaScript", "HTML", "CSS", "SQL (MySQL)", "WordPress"]
         },
         {
             "category": "Windows Ecosystem",
@@ -149,8 +178,6 @@ portfolio = {
     "cv_path": os.path.join(os.getcwd(), 'Omar_Elsharoud_CV.docx')
 }
 
-
-# ---- New Interactive Template ----
 TEMPLATE = """
 <!doctype html>
 <html lang="en">
@@ -165,24 +192,23 @@ TEMPLATE = """
 
   <style>
     body {
-      font-family: 'Outfit', sans-serif; /* Applied new font */
+      font-family: 'Outfit', sans-serif; 
       margin:0; 
       background:#0f172a; 
       color:#f1f5f9; 
       line-height:1.6; 
       scroll-behavior:smooth;
-      font-size: 20px; /* Increased base font size */
+      font-size: 20px; 
     }
 
     section {
-      min-height: 60vh; /* Reduced gap (was 90vh) */
+      min-height: 60vh; 
       display:flex; 
       flex-direction:column; 
       justify-content:center; 
       align-items:center; 
-      padding: 40px 20px; /* Reduced padding */
+      padding: 40px 20px; 
       
-      /* Animation Initial State */
       opacity: 0; 
       transform: translateY(80px);
       transition: opacity 0.8s ease-out, transform 0.8s ease-out;
@@ -197,7 +223,7 @@ TEMPLATE = """
     }
 
     h1 {
-      font-size: 80px; /* Much larger heading */
+      font-size: 80px; 
       font-weight: 800; 
       margin-bottom: 20px;
       text-align: center;
@@ -224,14 +250,13 @@ TEMPLATE = """
     }
 
     p, li {
-      font-size: 20px; /* Larger body text */
+      font-size: 20px; 
       color: #cbd5e1;
       font-weight: 300;
     }
 
     .text-center { text-align: center; }
     
-    /* Navigation */
     nav {
       position:fixed; 
       top:20px; 
@@ -258,7 +283,6 @@ TEMPLATE = """
       color:#38bdf8;
     }
     
-    /* Cards with Hover Animation */
     .card {
         background: #1e293b;
         padding: 30px;
@@ -271,7 +295,7 @@ TEMPLATE = """
     }
 
     .card:hover {
-        transform: translateY(-8px); /* Lift up effect */
+        transform: translateY(-8px); 
         box-shadow: 0 15px 30px rgba(0,0,0,0.3);
         border-color: #38bdf8;
     }
@@ -279,7 +303,6 @@ TEMPLATE = """
     ul { padding-left:25px; }
     ul li { margin:10px 0; }
     
-    /* Skills Chips */
     .skill-category {
       width: 100%;
       margin-bottom: 30px;
@@ -386,7 +409,13 @@ TEMPLATE = """
     <h2>Technical Projects</h2>
     {% for proj in p.projects %}
       <div class="card">
-          <h3 style="color:#38bdf8;">{{proj.title}}</h3>
+          <h3 style="color:#38bdf8;">
+            {% if proj.title == "Dar Ul Isra Website (darulisra.org.uk)" %}
+              <a href="https://darulisra.org.uk" target="_blank" style="color:inherit; text-decoration:none;">{{proj.title}} ↗</a>
+            {% else %}
+              {{proj.title}}
+            {% endif %}
+          </h3>
           <ul>
             {% for item in proj["items"] %}
               <li>{{item}}</li>
@@ -448,7 +477,7 @@ TEMPLATE = """
         }
       });
     }, {
-        threshold: 0.15, // Trigger when 15% of the section is visible
+        threshold: 0.15, 
         rootMargin: "0px"
     });
 
@@ -456,20 +485,3 @@ TEMPLATE = """
   </script>
 </body>
 </html>
-"""
-
-@app.route('/')
-def index():
-    has_cv = os.path.exists(portfolio['cv_path'])
-    return render_template_string(TEMPLATE, p=portfolio, has_cv=has_cv)
-
-@app.route('/download-cv')
-def download_cv():
-    if os.path.exists(portfolio['cv_path']):
-        folder, filename = os.path.split(portfolio['cv_path'])
-        return send_from_directory(folder, filename, as_attachment=True)
-    else:
-        return "CV file not found on the server.", 404
-
-if __name__ == '__main__':
-    app.run(debug=True, host='127.0.0.1', port=5000)
