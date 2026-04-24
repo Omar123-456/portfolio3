@@ -467,21 +467,44 @@ TEMPLATE = """
     <p>© {{p.name}} — Portfolio Website</p>
   </footer>
 
-  <script>
-    const sections = document.querySelectorAll("section");
-    
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){ 
-            entry.target.classList.add("visible"); 
-        }
-      });
-    }, {
-        threshold: 0.15, 
-        rootMargin: "0px"
-    });
+<script>
+    // Wait for the HTML document to be fully loaded and parsed
+    document.addEventListener("DOMContentLoaded", function() {
+        const sections = document.querySelectorAll("section");
+        
+        // Only run the observer if sections actually exist on the page
+        if (sections.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) { 
+                    entry.target.classList.add("visible"); 
+                }
+              });
+            }, {
+                threshold: 0.15, 
+                rootMargin: "0px"
+            });
 
-    sections.forEach(sec=>observer.observe(sec));
+            sections.forEach(sec => observer.observe(sec));
+        }
+    });
   </script>
 </body>
 </html>
+"""
+
+@app.route('/')
+def index():
+    has_cv = os.path.exists(portfolio['cv_path'])
+    return render_template_string(TEMPLATE, p=portfolio, has_cv=has_cv)
+
+@app.route('/download-cv')
+def download_cv():
+    if os.path.exists(portfolio['cv_path']):
+        folder, filename = os.path.split(portfolio['cv_path'])
+        return send_from_directory(folder, filename, as_attachment=True)
+    else:
+        return "CV file not found on the server.", 404
+
+if __name__ == '__main__':
+    app.run(debug=True, host='127.0.0.1', port=5000)
