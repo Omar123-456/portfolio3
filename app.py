@@ -161,6 +161,16 @@ portfolio = {
 
     "leadership": [
         {
+            "role": "Youth Program Coordinator / Lead Youth Mentor",
+            "org": "Community Youth Program",
+            "highlights": [
+                "Designed and implemented a comprehensive 3-year educational and development curriculum for distinct youth demographics (ages 7–18).",
+                "Facilitated weekly 2-hour interactive sessions focusing on historical studies, strategic analysis, character building, and community ethics.",
+                "Mentored young adults through complex social and moral topics, fostering personal accountability, resilience, and critical thinking skills.",
+                "Adapted advanced historical texts into engaging narratives, coordinated program logistics, and cultivated a safe, inclusive environment for leadership development."
+            ]
+        },
+        {
             "role": "Scout Leader",
             "org": "Scouts Association (Ongoing)",
             "highlights": [
