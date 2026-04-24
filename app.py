@@ -44,6 +44,7 @@ portfolio = {
                 "Developed and maintain the official community website (darulisra.org.uk) using WordPress, serving as a central digital hub for the local community.",
                 "Integrated dynamic functionality including automated prayer timetables, event management calendars, and secure donation gateways.",
                 "Optimized the UI/UX for accessibility, mobile responsiveness, and SEO, ensuring critical community information is easily accessible to a diverse user base."
+                "Worked on the booking system and backend systems for the website, created our own plug in from scratch to prevent double bookings"
             ]
         },
         {
@@ -67,7 +68,7 @@ portfolio = {
             ]
         },
         {
-            "title": "QuizCraft – Full-Stack Quiz Management Platform (PHP, MySQL, Vanilla JS, HTML5, CSS3)",
+            "title": "QuizCraft – Full-Stack Quiz Management Platform",
             "items": [
                 "Developed a dynamic, custom MVC-architected web application that enables users to create, publish, and evaluate interactive quizzes.",
                 "Designed a normalized relational database schema using PDO to securely manage users, complex quiz structures, dynamic multiple-choice options, and submission data.",
@@ -75,6 +76,7 @@ portfolio = {
                 "Built a highly interactive front-end utilizing Vanilla JavaScript for real-time DOM manipulation, enabling users to dynamically add, edit, and remove form elements without page reloads.",
                 "Secured the application with robust, session-based user authentication, state management, and prepared SQL statements to prevent injection vulnerabilities.",
                 "Created a centralized creator dashboard to manage content and review user submissions, featuring side-by-side comparisons of submitted text answers against defined model answers."
+                "PHP, MySQL, Vanilla JS, HTML5, CSS3"
             ]
         },
         {
