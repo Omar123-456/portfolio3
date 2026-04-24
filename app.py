@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 portfolio = {
     "name": "Omar Elsharoud",
-    "title": "Software Engineering Student | Aspiring Software Developer",
+    "title": "Aspiring Software Developer",
     "location": "Cardiff, Wales, CF3 6YP",
     "email": "f.elsharoud@gmail.com",
     "phone": "+44 7881 851872",
@@ -23,7 +23,7 @@ portfolio = {
         {
             "degree": "BSc (Hons) Software Engineering",
             "institution": "Cardiff Metropolitan University",
-            "dates": "Sept 2023 – Present",
+            "dates": "Sept 2023 – Graduate (06/2026)",
             "notes": "Relevant Modules: Operating Systems, Advanced Programming, Database Management."
         },
         {
