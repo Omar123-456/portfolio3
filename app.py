@@ -217,7 +217,7 @@ TEMPLATE = """
       flex-direction:column; 
       justify-content:center; 
       align-items:center; 
-      padding: 120px 20px 40px; /* Increased top padding so fixed nav doesn't overlap content */
+      padding: 120px 20px 40px;
       
       opacity: 0; 
       transform: translateY(80px);
@@ -285,7 +285,7 @@ TEMPLATE = """
       box-shadow:0 10px 30px rgba(0,0,0,0.5);
       z-index:1000;
       max-width: 90%;
-      transition: transform 0.3s ease-in-out; /* Added transition for slide effect */
+      transition: transform 0.3s ease-in-out;
     }
     nav a {
       color:#f1f5f9; 
@@ -370,26 +370,25 @@ TEMPLATE = """
       color:#64748b;
     }
     
-    /* MOBILE FIXES */
     @media (max-width: 768px) {
         nav { 
-            width: 95%; /* Makes the nav spread across the screen */
+            width: 90%;
             max-width: 100%;
             gap: 12px; 
             padding: 12px 10px;
-            border-radius: 20px; /* Forms a wider pill rather than a squashed square */
+            border-radius: 20px;
             top: 15px;
         }
         
         nav.nav-hidden {
-            transform: translate(-50%, -150%); /* Hides the nav upwards out of view while keeping it centered */
+            transform: translate(-50%, -150%);
         }
         
         nav a {
             font-size: 15px; 
         }
         section { 
-            padding: 140px 15px 40px; /* Pushes content far down to avoid the multi-line mobile nav */
+            padding: 140px 15px 40px;
             min-height: auto; 
         }
         h1 { font-size: 48px; }
@@ -522,28 +521,22 @@ TEMPLATE = """
             sections.forEach(sec => observer.observe(sec));
         }
 
-        // Mobile scroll-to-hide nav logic
         let lastScrollTop = 0;
         const nav = document.querySelector('nav');
 
         window.addEventListener('scroll', function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
-            // Only apply this logic on mobile viewports
             if (window.innerWidth <= 768) {
-                // If scrolling down and past the very top threshold
                 if (scrollTop > lastScrollTop && scrollTop > 60) {
                     nav.classList.add('nav-hidden');
                 } else {
-                    // Scrolling up
                     nav.classList.remove('nav-hidden');
                 }
             } else {
-                // On desktop, ensure the nav is always visible regardless of resizing
                 nav.classList.remove('nav-hidden');
             }
             
-            // Prevent negative values from iOS bounce scrolling
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
         });
     });
