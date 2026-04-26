@@ -5,13 +5,13 @@ app = Flask(__name__)
 
 portfolio = {
     "name": "Omar Elsharoud",
-    "title": "Aspiring Software Developer",
+    "title": "Software Engineering Graduate | Aspiring Software Developer",
     "location": "Cardiff, Wales, CF3 6YP",
     "email": "f.elsharoud@gmail.com",
     "phone": "+44 7881 851872",
 
     "profile": (
-        "Motivated and detail-oriented Software Engineering student with a strong foundation in the "
+        "Motivated and detail-oriented Software Engineering graduate with a strong foundation in the "
         "Full Software Development Lifecycle (SDLC). Possess strong practical experience delivering "
         "software projects in both academic and independent settings. Proficient in Microsoft Windows "
         "Platform development, with a solid understanding of OS architecture, services, and security features. "
@@ -23,7 +23,7 @@ portfolio = {
         {
             "degree": "BSc (Hons) Software Engineering",
             "institution": "Cardiff Metropolitan University",
-            "dates": "Sept 2023 – Graduate (06/2026)",
+            "dates": "Sept 2023 – 06/2026",
             "notes": "Relevant Modules: Operating Systems, Advanced Programming, Database Management."
         },
         {
@@ -44,7 +44,6 @@ portfolio = {
                 "Developed and maintain the official community website (darulisra.org.uk) using WordPress, serving as a central digital hub for the local community.",
                 "Integrated dynamic functionality including automated prayer timetables, event management calendars, and secure donation gateways.",
                 "Optimized the UI/UX for accessibility, mobile responsiveness, and SEO, ensuring critical community information is easily accessible to a diverse user base."
-                "Worked on the booking system and backend systems for the website, created our own plug in from scratch to prevent double bookings"
             ]
         },
         {
@@ -68,7 +67,7 @@ portfolio = {
             ]
         },
         {
-            "title": "QuizCraft – Full-Stack Quiz Management Platform",
+            "title": "QuizCraft – Full-Stack Quiz Management Platform (PHP, MySQL, Vanilla JS, HTML5, CSS3)",
             "items": [
                 "Developed a dynamic, custom MVC-architected web application that enables users to create, publish, and evaluate interactive quizzes.",
                 "Designed a normalized relational database schema using PDO to securely manage users, complex quiz structures, dynamic multiple-choice options, and submission data.",
@@ -76,7 +75,6 @@ portfolio = {
                 "Built a highly interactive front-end utilizing Vanilla JavaScript for real-time DOM manipulation, enabling users to dynamically add, edit, and remove form elements without page reloads.",
                 "Secured the application with robust, session-based user authentication, state management, and prepared SQL statements to prevent injection vulnerabilities.",
                 "Created a centralized creator dashboard to manage content and review user submissions, featuring side-by-side comparisons of submitted text answers against defined model answers."
-                "PHP, MySQL, Vanilla JS, HTML5, CSS3"
             ]
         },
         {
@@ -251,6 +249,7 @@ TEMPLATE = """
       color: #38bdf8;
       border-bottom: 3px solid #38bdf8;
       padding-bottom: 10px;
+      text-align: center;
     }
 
     h3 {
@@ -275,6 +274,8 @@ TEMPLATE = """
       left:50%; 
       transform:translateX(-50%);
       display:flex; 
+      flex-wrap: wrap;
+      justify-content: center;
       gap:25px; 
       background:rgba(15, 23, 42, 0.85); 
       backdrop-filter: blur(12px);
@@ -283,6 +284,7 @@ TEMPLATE = """
       border: 1px solid rgba(255,255,255,0.1);
       box-shadow:0 10px 30px rgba(0,0,0,0.5);
       z-index:1000;
+      max-width: 90%;
     }
     nav a {
       color:#f1f5f9; 
@@ -304,6 +306,7 @@ TEMPLATE = """
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         border: 1px solid #334155;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-sizing: border-box; 
     }
 
     .card:hover {
@@ -367,10 +370,22 @@ TEMPLATE = """
     }
     
     @media (max-width: 768px) {
-        nav { display: none; } 
-        section { padding: 40px 15px; min-height: auto; }
+        nav { 
+            gap: 10px; 
+            padding: 10px 15px;
+            border-radius: 15px;
+            top: 10px;
+        }
+        nav a {
+            font-size: 14px; 
+        }
+        section { 
+            padding: 100px 15px 40px; 
+            min-height: auto; 
+        }
         h1 { font-size: 48px; }
         h2 { font-size: 36px; }
+        .card { padding: 20px; }
     }
   </style>
 </head>
@@ -387,7 +402,7 @@ TEMPLATE = """
   <section id="home">
     <img src="{{ url_for('static', filename='profile.jpg') }}" class="profile" alt="Profile Picture">
     <h1>{{p.name}}</h1>
-    <p style="font-size:28px; color:#38bdf8; font-weight: 500;">{{p.title}}</p>
+    <p style="font-size:28px; color:#38bdf8; font-weight: 500; text-align: center;">{{p.title}}</p>
     <p class="text-center">{{p.location}}<br>
     <a href="mailto:{{p.email}}" style="color:#f1f5f9; text-decoration: underline;">{{p.email}}</a> • {{p.phone}}</p>
   </section>
@@ -479,12 +494,10 @@ TEMPLATE = """
     <p>© {{p.name}} — Portfolio Website</p>
   </footer>
 
-<script>
-    // Wait for the HTML document to be fully loaded and parsed
+  <script>
     document.addEventListener("DOMContentLoaded", function() {
         const sections = document.querySelectorAll("section");
         
-        // Only run the observer if sections actually exist on the page
         if (sections.length > 0) {
             const observer = new IntersectionObserver((entries) => {
               entries.forEach(entry => {
@@ -493,8 +506,8 @@ TEMPLATE = """
                 }
               });
             }, {
-                threshold: 0.15, 
-                rootMargin: "0px"
+                threshold: 0.02, 
+                rootMargin: "50px" 
             });
 
             sections.forEach(sec => observer.observe(sec));
