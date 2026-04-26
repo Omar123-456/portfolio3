@@ -47,7 +47,7 @@ portfolio = {
             ]
         },
         {
-            "title": "AccomFix – Full Stack Property Management System",
+            "title": "AccomFix – Full-Stack Property Management System",
             "items": [
                 "Developed a full-stack web application using the LAMP stack (PHP, MySQL, HTML/CSS/JS) to streamline maintenance reporting and triage in the student housing sector.",
                 "Engineered a custom 'Link Code' multi-tenancy architecture, enabling secure, frictionless onboarding between independent landlords and tenant clusters.",
@@ -57,7 +57,7 @@ portfolio = {
             ]
         },
         {
-            "title": "CampusTasker – Full Stack Web Application",
+            "title": "CampusTasker – Full-Stack Web Application",
             "items": [
                 "Engineered a full-stack, localized micro-job marketplace using PHP, MySQL, JavaScript, HTML, and CSS to connect community residents with university students.",
                 "Integrated third-party APIs (Postcodes.io and Leaflet.js) using PHP cURL to build an interactive spatial mapping system that dynamically geocodes locations and calculates real-time distances between users and tasks.",
@@ -67,7 +67,7 @@ portfolio = {
             ]
         },
         {
-            "title": "QuizCraft – Full Stack Quiz Management Platform (PHP, MySQL, Vanilla JS, HTML5, CSS3)",
+            "title": "QuizCraft – Full-Stack Quiz Management Platform (PHP, MySQL, Vanilla JS, HTML5, CSS3)",
             "items": [
                 "Developed a dynamic, custom MVC-architected web application that enables users to create, publish, and evaluate interactive quizzes.",
                 "Designed a normalized relational database schema using PDO to securely manage users, complex quiz structures, dynamic multiple-choice options, and submission data.",
@@ -217,7 +217,7 @@ TEMPLATE = """
       flex-direction:column; 
       justify-content:center; 
       align-items:center; 
-      padding: 40px 20px; 
+      padding: 120px 20px 40px; /* Increased top padding so fixed nav doesn't overlap content */
       
       opacity: 0; 
       transform: translateY(80px);
@@ -369,18 +369,21 @@ TEMPLATE = """
       color:#64748b;
     }
     
+    /* MOBILE FIXES */
     @media (max-width: 768px) {
         nav { 
-            gap: 10px; 
-            padding: 10px 15px;
-            border-radius: 15px;
-            top: 10px;
+            width: 95%; /* Makes the nav spread across the screen */
+            max-width: 100%;
+            gap: 12px; 
+            padding: 12px 10px;
+            border-radius: 20px; /* Forms a wider pill rather than a squashed square */
+            top: 15px;
         }
         nav a {
-            font-size: 14px; 
+            font-size: 15px; 
         }
         section { 
-            padding: 100px 15px 40px; 
+            padding: 140px 15px 40px; /* Pushes content far down to avoid the multi-line mobile nav */
             min-height: auto; 
         }
         h1 { font-size: 48px; }
