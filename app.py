@@ -47,7 +47,7 @@ portfolio = {
             ]
         },
         {
-            "title": "AccomFix – Full-Stack Property Management System",
+            "title": "AccomFix – Full Stack Property Management System",
             "items": [
                 "Developed a full-stack web application using the LAMP stack (PHP, MySQL, HTML/CSS/JS) to streamline maintenance reporting and triage in the student housing sector.",
                 "Engineered a custom 'Link Code' multi-tenancy architecture, enabling secure, frictionless onboarding between independent landlords and tenant clusters.",
@@ -57,7 +57,7 @@ portfolio = {
             ]
         },
         {
-            "title": "CampusTasker – Full-Stack Web Application",
+            "title": "CampusTasker – Full Stack Web Application",
             "items": [
                 "Engineered a full-stack, localized micro-job marketplace using PHP, MySQL, JavaScript, HTML, and CSS to connect community residents with university students.",
                 "Integrated third-party APIs (Postcodes.io and Leaflet.js) using PHP cURL to build an interactive spatial mapping system that dynamically geocodes locations and calculates real-time distances between users and tasks.",
@@ -67,7 +67,7 @@ portfolio = {
             ]
         },
         {
-            "title": "QuizCraft – Full-Stack Quiz Management Platform (PHP, MySQL, Vanilla JS, HTML5, CSS3)",
+            "title": "QuizCraft – Full Stack Quiz Management Platform (PHP, MySQL, Vanilla JS, HTML5, CSS3)",
             "items": [
                 "Developed a dynamic, custom MVC-architected web application that enables users to create, publish, and evaluate interactive quizzes.",
                 "Designed a normalized relational database schema using PDO to securely manage users, complex quiz structures, dynamic multiple-choice options, and submission data.",
