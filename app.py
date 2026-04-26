@@ -140,7 +140,7 @@ portfolio = {
         {
             "role": "Admin Assistant",
             "company": "HMRC",
-            "dates": "Sept 2022 – Sep 2023",
+            "dates": "Sept 2022 – Sept 2023",
             "highlights": [
                 "Managed high-volume customer queries, applying structured problem-solving similar to software debugging.",
                 "Processed sensitive data in line with strict compliance frameworks, mirroring security practices in software engineering.",
@@ -150,7 +150,7 @@ portfolio = {
         {
             "role": "Charity Volunteer",
             "company": "Local Distribution Warehouse",
-            "dates": "July 2018 – Sep 2018",
+            "dates": "July 2018 – Sept 2018",
             "highlights": [
                 "Supported logistics and distribution, strengthening teamwork and communication skills."
             ]
@@ -285,6 +285,7 @@ TEMPLATE = """
       box-shadow:0 10px 30px rgba(0,0,0,0.5);
       z-index:1000;
       max-width: 90%;
+      transition: transform 0.3s ease-in-out; /* Added transition for slide effect */
     }
     nav a {
       color:#f1f5f9; 
@@ -379,6 +380,11 @@ TEMPLATE = """
             border-radius: 20px; /* Forms a wider pill rather than a squashed square */
             top: 15px;
         }
+        
+        nav.nav-hidden {
+            transform: translate(-50%, -150%); /* Hides the nav upwards out of view while keeping it centered */
+        }
+        
         nav a {
             font-size: 15px; 
         }
@@ -515,6 +521,31 @@ TEMPLATE = """
 
             sections.forEach(sec => observer.observe(sec));
         }
+
+        // Mobile scroll-to-hide nav logic
+        let lastScrollTop = 0;
+        const nav = document.querySelector('nav');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Only apply this logic on mobile viewports
+            if (window.innerWidth <= 768) {
+                // If scrolling down and past the very top threshold
+                if (scrollTop > lastScrollTop && scrollTop > 60) {
+                    nav.classList.add('nav-hidden');
+                } else {
+                    // Scrolling up
+                    nav.classList.remove('nav-hidden');
+                }
+            } else {
+                // On desktop, ensure the nav is always visible regardless of resizing
+                nav.classList.remove('nav-hidden');
+            }
+            
+            // Prevent negative values from iOS bounce scrolling
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+        });
     });
   </script>
 </body>
