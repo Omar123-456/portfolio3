@@ -4,111 +4,90 @@ import os
 app = Flask(__name__)
 
 portfolio = {
-    "name": "Omar Elsharoud",
-    "title": "Software Engineering Graduate | Aspiring Software Developer",
+    "name": "Omar El-Sharoud",
+    "title": "Software Engineering Graduate",
     "location": "Cardiff, Wales, CF3 6YP",
     "email": "f.elsharoud@gmail.com",
     "phone": "+44 7881 851872",
 
     "profile": (
-        "Motivated and detail-oriented Software Engineering graduate with a strong foundation in the "
-        "Full Software Development Lifecycle (SDLC). Possess strong practical experience delivering "
-        "software projects in both academic and independent settings. Proficient in Microsoft Windows "
-        "Platform development, with a solid understanding of OS architecture, services, and security features. "
-        "Proven ability to lead teams, implement secure systems, and execute comprehensive unit and software testing. "
-        "Seeking a graduate opportunity to apply technical expertise in a fast-paced, innovative environment."
+        "Motivated and detail-orientated Software Engineering Graduate with a strong foundation spanning the "
+        "Full Software Development Lifecycle (SDLC). Possesses robust practical experience delivering "
+        "complex, database-driven software projects across both academic and independent settings. Proficient in "
+        "Microsoft Windows Platform development, with a solid structural understanding of OS architecture, system "
+        "services, and security features. A proven technical leader skilled at implementing secure systems and "
+        "executing comprehensive unit, integration, and regression testing pipelines. Seeking a graduate software "
+        "engineering opportunity to apply technical expertise within a fast-paced, innovative environment."
     ),
 
     "education": [
         {
             "degree": "BSc (Hons) Software Engineering",
             "institution": "Cardiff Metropolitan University",
-            "dates": "Sept 2023 – 06/2026",
-            "notes": "Relevant Modules: Operating Systems, Advanced Programming, Database Management."
+            "dates": "Sept 2023 – Graduate (06/2026)",
+            "notes": "Relevant Modules: Operating Systems & Architecture, Advanced Object-Orientated Programming, Database Management Systems, Systems Analysis & Design."
         },
         {
-            "degree": "A-Levels & Equivalent",
+            "degree": "A-Levels & Equivalents",
             "institution": "Cardiff High School",
             "dates": "Sept 2018 – June 2022",
-            "notes": (
-                "Subjects: Mathematics, Chemistry, Physics, ICT, Biology, Design & Technology, "
-                "Business."
-            )
+            "notes": "Subjects Covered: Mathematics, ICT, Physics, Chemistry, Biology, Design & Technology, Business Studies."
         }
     ],
 
     "projects": [
         {
-            "title": "Dar Ul Isra Website (darulisra.org.uk)",
+            "title": "Dar Ul Isra Platform",
             "items": [
-                "Developed and maintain the official community website (darulisra.org.uk) using WordPress, serving as a central digital hub for the local community.",
-                "Integrated dynamic functionality including automated prayer timetables, event management calendars, and secure donation gateways.",
-                "Optimized the UI/UX for accessibility, mobile responsiveness, and SEO, ensuring critical community information is easily accessible to a diverse user base."
+                "Developed and continue to maintain the official community platform using WordPress, acting as the sole technical lead for a digital hub serving a large, highly diverse user base.",
+                "Integrated dynamic backend functionality, including automated prayer timetables, event management calendars, and secure donation gateways.",
+                "Optimised the UI/UX for exceptional accessibility, mobile responsiveness, and technical SEO, ensuring critical information is easily accessible."
             ]
         },
         {
-            "title": "AccomFix – Full-Stack Property Management System",
+            "title": "WhatsApp AI Automation SaaS",
             "items": [
-                "Developed a full-stack web application using the LAMP stack (PHP, MySQL, HTML/CSS/JS) to streamline maintenance reporting and triage in the student housing sector.",
-                "Engineered a custom 'Link Code' multi-tenancy architecture, enabling secure, frictionless onboarding between independent landlords and tenant clusters.",
-                "Implemented a priority-based ticketing workflow featuring secure multipart file uploads for visual evidence and a real-time, AJAX-driven live messaging system.",
-                "Designed a role-based administrative dashboard utilizing SQL aggregate functions for real-time issue analytics, status management, and CSV data exportation.",
-                "Enforced strict web security best practices, utilizing Bcrypt for password hashing and PDO prepared statements to mitigate SQL injection vulnerabilities."
+                "Built a multi-tenant SaaS platform using Node.js, Express, PostgreSQL, and Docker that connects seamlessly to WhatsApp Web to automate intelligent, context-aware replies powered by the Google Gemini API.",
+                "Engineered persistent, Puppeteer-based session management with compressed database-backed archival, enabling flawless WhatsApp connectivity across container rebuilds without requiring user re-authentication.",
+                "Designed a multi-group monitoring system featuring per-chat AI persona overrides, a one-tap web-scraping knowledge pipeline, and an automated availability calendar engine with iCal export functionality for autonomous scheduling.",
+                "Containerised and deployed the entire infrastructure via Docker Compose to Hugging Face Spaces with automated CI/CD pipelines, featuring a mobile-responsive telemetry dashboard and secure JWT/Bcrypt authentication."
             ]
         },
         {
-            "title": "CampusTasker – Full-Stack Web Application",
+            "title": "AccomFix",
             "items": [
-                "Engineered a full-stack, localized micro-job marketplace using PHP, MySQL, JavaScript, HTML, and CSS to connect community residents with university students.",
-                "Integrated third-party APIs (Postcodes.io and Leaflet.js) using PHP cURL to build an interactive spatial mapping system that dynamically geocodes locations and calculates real-time distances between users and tasks.",
-                "Designed a secure, relational database schema and implemented PDO prepared statements to prevent SQL injection vulnerabilities, alongside robust error-handling for API timeouts.",
-                "Built an asynchronous, peer-to-peer messaging system and dynamic marketplace filters using the JavaScript Fetch API, enabling real-time UI updates and data polling without full-page reloads.",
+                "Developed a full-stack web application utilising the LAMP stack (PHP, MySQL, Apache, HTML/CSS/JS) to streamline automated maintenance reporting and triage workflows within the student housing sector.",
+                "Engineered a custom 'Link Code' multi-tenancy architecture, guaranteeing secure, frictionless onboarding and total data isolation between independent landlords and tenant clusters.",
+                "Implemented a priority-based ticketing workflow featuring secure multipart file uploads for visual evidence alongside a real-time, AJAX-driven live messaging system.",
+                "Designed a role-based administrative dashboard leveraging SQL aggregate functions for real-time issue analytics, status management, and automated CSV data exportation.",
+                "Enforced strict web security best practices, deploying Bcrypt for password hashing and PDO prepared statements to completely mitigate SQL injection vulnerabilities."
+            ]
+        },
+        {
+            "title": "CampusTasker",
+            "items": [
+                "Engineered a localised peer-to-peer web marketplace using PHP, MySQL, and Vanilla JavaScript designed to connect community residents with university students for local tasks.",
+                "Integrated third-party spatial APIs (Postcodes.io and Leaflet.js) using PHP cURL to build an interactive mapping system that dynamically geocodes locations and calculates real-time distances.",
+                "Designed a secure, relational database schema implementing robust error-handling for API timeouts and comprehensive data validation.",
+                "Built an asynchronous messaging system and dynamic marketplace filters using the JavaScript Fetch API, enabling real-time DOM polling and UI updates without full-page reloads.",
                 "Applied the POST/Redirect/GET (PRG) architectural pattern to ensure secure state management and prevent duplicate database entries during form submissions."
             ]
         },
         {
-            "title": "QuizCraft – Full-Stack Quiz Management Platform (PHP, MySQL, Vanilla JS, HTML5, CSS3)",
+            "title": "QuizCraft",
             "items": [
-                "Developed a dynamic, custom MVC-architected web application that enables users to create, publish, and evaluate interactive quizzes.",
-                "Designed a normalized relational database schema using PDO to securely manage users, complex quiz structures, dynamic multiple-choice options, and submission data.",
-                "Engineered advanced quiz flow logic, including conditional branching (allowing distinct 'next question' paths based on user selection) and automated grading systems.",
-                "Built a highly interactive front-end utilizing Vanilla JavaScript for real-time DOM manipulation, enabling users to dynamically add, edit, and remove form elements without page reloads.",
-                "Secured the application with robust, session-based user authentication, state management, and prepared SQL statements to prevent injection vulnerabilities.",
-                "Created a centralized creator dashboard to manage content and review user submissions, featuring side-by-side comparisons of submitted text answers against defined model answers."
+                "Developed a dynamic, custom MVC-architected web application enabling users to build, publish, and evaluate highly interactive educational quizzes.",
+                "Designed a normalised relational database schema using PDO to securely manage users, complex relational quiz structures, dynamic multiple-choice arrays, and submission logs.",
+                "Engineered advanced quiz flow logic, including automated grading engines and conditional branching paths based on real-time user selections.",
+                "Built a highly interactive front-end utilising Vanilla JavaScript for real-time DOM manipulation, allowing users to dynamically alter form elements seamlessly."
             ]
         },
         {
-            "title": "Mental Health Support Platform (Team Lead)",
+            "title": "Mental Health Support Platform",
             "items": [
-                "Oversaw the Full Development Lifecycle, from requirement gathering to deployment and testing.",
-                "Developed a secure web app with user authentication (PHP sessions) and SQL database hashing.",
-                "Conducted unit testing on booking algorithms and security features to ensure data integrity.",
-                "Managed the project codebase using GitHub, ensuring version control and smooth collaboration.",
-                "Fine-tuned an AI chatbot for ethical interaction regarding sensitive mental health queries."
-            ]
-        },
-        {
-            "title": "Medical Chatbot for NHS Triage",
-            "items": [
-                "Developed a web-based chatbot using AI APIs, fine-tuned for accurate triage guidance.",
-                "Implemented rigorous software testing protocols to refine answers, limiting inappropriate responses through custom filters.",
-                "Focused on safety and reliability, mirroring critical system architecture standards."
-            ]
-        },
-        {
-            "title": "Caravan Rental Website (Lead Developer)",
-            "items": [
-                "Led a team to build a dynamic rental website using PHP, JavaScript, and SQL.",
-                "Utilized Agile methodologies for sprint planning and iterative development.",
-                "Implemented back-end logic and database structures that laid the foundation for advanced booking systems."
-            ]
-        },
-        {
-            "title": "Welsh Museums Mobile App",
-            "items": [
-                "Designed and implemented UI/UX independently, ensuring accessibility and bilingual support.",
-                "Integrated Google Maps API for location functionality.",
-                "Managed source code and feature updates via GitHub."
+                "Oversaw the entire development lifecycle from initial requirement gathering through to deployment, managing task delegation within an Agile framework.",
+                "Developed a secure web application with robust user authentication frameworks, session tracking, and encrypted database hashing.",
+                "Conducted rigorous unit testing on booking algorithms and security modules to guarantee data integrity and system stability."
             ]
         }
     ],
@@ -116,65 +95,57 @@ portfolio = {
     "skills_categorized": [
         {
             "category": "Languages & Web",
-            "items": ["Python", "Java", "PHP", "JavaScript", "HTML", "CSS", "SQL (MySQL)", "WordPress"]
+            "items": ["Python", "Java", "PHP", "JavaScript", "SQL (MySQL, PostgreSQL)", "HTML", "CSS", "WordPress"]
         },
         {
             "category": "Windows Ecosystem",
-            "items": ["Microsoft Windows Platform Development", "Windows OS Architecture", "Development Frameworks", "System Services", "Security Features"]
+            "items": ["Windows OS Architecture", "System Services", "Frameworks", "Security Features"]
         },
         {
             "category": "DevOps & Tools",
-            "items": ["GitHub (Branching, PRs)", "Git", "Version Control", "CI/CD Awareness", "Cisco Packet Tracer"]
+            "items": ["Git", "GitHub (Branching, Pull Requests, Version Control)", "Docker", "Docker Compose", "CI/CD Pipelines", "Cisco Packet Tracer"]
         },
         {
             "category": "Methodologies & Testing",
-            "items": ["Agile (Scrum)", "Full SDLC Management", "Unit Testing", "Software Testing (Integration/System)", "Debugging"]
+            "items": ["Agile (Scrum)", "Full SDLC Management", "Unit Testing", "Integration & System Testing", "Advanced Debugging"]
         },
         {
-            "category": "Security",
-            "items": ["Data Hashing", "Secure Session Management", "GDPR Compliance Awareness"]
+            "category": "Security & Compliance",
+            "items": ["Data Hashing (Bcrypt, SHA)", "Secure Session Management", "PDO Prepared Statements", "GDPR Awareness"]
         }
     ],
 
     "experience": [
         {
-            "role": "Admin Assistant",
+            "role": "Administrative Assistant",
             "company": "HMRC",
             "dates": "Sept 2022 – Sept 2023",
             "highlights": [
-                "Managed high-volume customer queries, applying structured problem-solving similar to software debugging.",
-                "Processed sensitive data in line with strict compliance frameworks, mirroring security practices in software engineering.",
-                "Gained strong skills in process optimization and working under pressure."
-            ]
-        },
-        {
-            "role": "Charity Volunteer",
-            "company": "Local Distribution Warehouse",
-            "dates": "July 2018 – Sept 2018",
-            "highlights": [
-                "Supported logistics and distribution, strengthening teamwork and communication skills."
+                "Managed high-volume customer queries, applying highly structured, analytical problem-solving methodologies mirroring software debugging workflows.",
+                "Processed sensitive data in strict accordance with compliance frameworks and data protection legislation, mirroring backend security practices.",
+                "Developed exceptional skills in process optimisation, systematic troubleshooting, and delivering accurate results under tight operational pressure."
             ]
         }
     ],
 
     "leadership": [
         {
-            "role": "Youth Program Coordinator / Lead Youth Mentor",
-            "org": "Community Youth Program",
+            "role": "Youth Programme Coordinator & Lead Mentor",
+            "org": "Community Hub (Sept 2024 – Present)",
             "highlights": [
-                "Designed and implemented a comprehensive 3-year educational and development curriculum for distinct youth demographics (ages 7–18).",
-                "Facilitated weekly 2-hour interactive sessions focusing on historical studies, strategic analysis, character building, and community ethics.",
-                "Mentored young adults through complex social and moral topics, fostering personal accountability, resilience, and critical thinking skills.",
-                "Adapted advanced historical texts into engaging narratives, coordinated program logistics, and cultivated a safe, inclusive environment for leadership development."
+                "Designed and implemented a comprehensive three-year educational and development curriculum tailored for distinct youth demographics.",
+                "Facilitated weekly interactive sessions focusing on strategic analysis, character building, historical studies, and community ethics.",
+                "Mentored young adults through complex social topics, actively fostering personal accountability, resilience, and critical thinking skills.",
+                "Adapted advanced historical texts into engaging, accessible narratives while successfully coordinating project logistics and managing volunteer teams."
             ]
         },
         {
             "role": "Scout Leader",
-            "org": "Scouts Association (Ongoing)",
+            "org": "The Scouts Association (Ongoing)",
             "highlights": [
-                "Organized and led camps and hikes, ensuring safety and logistics.",
-                "Mentored youth, fostering teamwork, resilience, and problem-solving.",
-                "Transferred leadership skills into technical settings by guiding development teams and delegating tasks effectively."
+                "Organised and led large-scale camps and expeditions, taking full responsibility for risk assessments, safety protocols, and complex logistics.",
+                "Mentored youth members to foster teamwork, resilience, and practical problem-solving capabilities.",
+                "Successfully transferred these leadership skills into technical settings by guiding software development teams, setting clear objectives, and delegating development tasks effectively."
             ]
         }
     ],
@@ -335,7 +306,7 @@ TEMPLATE = """
     .chip {
       display:inline-block;
       padding:10px 20px;
-      border-radius:999px;
+      border-radius999px;
       background:#334155;
       margin:6px;
       font-size:18px;
@@ -445,8 +416,10 @@ TEMPLATE = """
     {% for proj in p.projects %}
       <div class="card">
           <h3 style="color:#38bdf8;">
-            {% if proj.title == "Dar Ul Isra Website (darulisra.org.uk)" %}
+            {% if proj.title == "Dar Ul Isra Platform" %}
               <a href="https://darulisra.org.uk" target="_blank" style="color:inherit; text-decoration:none;">{{proj.title}} ↗</a>
+            {% elif proj.title == "WhatsApp AI Automation SaaS" %}
+              <a href="https://omar123-456-whattsappbot.hf.space/" target="_blank" style="color:inherit; text-decoration:none;">{{proj.title}} ↗</a>
             {% else %}
               {{proj.title}}
             {% endif %}
@@ -487,7 +460,7 @@ TEMPLATE = """
       </div>
     {% endfor %}
 
-    <h2 style="margin-top: 60px;">Leadership</h2>
+    <h2 style="margin-top: 60px;">Leadership & Volunteering</h2>
     {% for l in p.leadership %}
       <div class="card">
         <h3>{{l.role}} <span style="font-weight:400; font-size:20px; color:#94a3b8;">— {{l.org}}</span></h3>
