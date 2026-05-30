@@ -54,6 +54,18 @@ portfolio = {
             ]
         },
         {
+            "title": "Align",
+            "items": [
+                "Architected and deployed a full-stack marriage compatibility platform featuring a psychometric assessment engine, real-time matching algorithm, and privacy-first photo reveal system built with React, Express 5, SQLite, and Prisma ORM.",
+                "Designed and implemented a multi-journey psychometric assessment flow comprising 40+ adaptive question screens (single-select, multi-select, ranked-choice, points-distribution, timed-response) with conditional branching logic based on user demographics and real-time selections.",
+                "Engineered a weighted compatibility matching algorithm with dealbreaker filtering, bidirectional scoring, and cold-start handling, backed by a normalised relational schema managing users, assessment responses, match pairs, and messaging logs.",
+                "Built a staged photo privacy pipeline using server-side image processing to generate pristine, 30%-blurred, and silhouette variants, progressively revealing profile photos based on mutual match acceptance and journey completion milestones.",
+                "Developed a real-time communication layer using WebSockets for instant messaging, with Agora RTC integration for in-app voice and video calling between matched users.",
+                "Implemented a secure authentication system with JWT tokens, AES-256 encryption for sensitive PII fields, and a face-detection liveness verification flow using the face-api.js library.",
+                "Containerised the application with a multi-stage Dockerfile and deployed to Fly.io with persistent SQLite volumes, automated CI/CD via GitHub Actions, and zero-downtime redeployment on push to main."
+            ]
+        },
+        {
             "title": "AccomFix",
             "items": [
                 "Developed a full-stack web application utilising the LAMP stack (PHP, MySQL, Apache, HTML/CSS/JS) to streamline automated maintenance reporting and triage workflows within the student housing sector.",
@@ -165,7 +177,7 @@ TEMPLATE = """
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{{p.name}} — Portfolio</title>
+  <title>{{p.name}} | Portfolio</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -306,7 +318,7 @@ TEMPLATE = """
     .chip {
       display:inline-block;
       padding:10px 20px;
-      border-radius999px;
+      border-radius:999px;
       background:#334155;
       margin:6px;
       font-size:18px;
@@ -420,6 +432,8 @@ TEMPLATE = """
               <a href="https://darulisra.org.uk" target="_blank" style="color:inherit; text-decoration:none;">{{proj.title}} ↗</a>
             {% elif proj.title == "WhatsApp AI Automation SaaS" %}
               <a href="https://omar123-456-whattsappbot.hf.space/" target="_blank" style="color:inherit; text-decoration:none;">{{proj.title}} ↗</a>
+            {% elif proj.title == "Align" %}
+              <a href="https://align-marrige-app.fly.dev/" target="_blank" style="color:inherit; text-decoration:none;">{{proj.title}} <span style="font-size: 16px; color: #94a3b8; font-weight: 400; font-style: italic;">(Under Development)</span> ↗</a>
             {% else %}
               {{proj.title}}
             {% endif %}
@@ -463,7 +477,7 @@ TEMPLATE = """
     <h2 style="margin-top: 60px;">Leadership & Volunteering</h2>
     {% for l in p.leadership %}
       <div class="card">
-        <h3>{{l.role}} <span style="font-weight:400; font-size:20px; color:#94a3b8;">— {{l.org}}</span></h3>
+        <h3>{{l.role}} <span style="font-weight:400; font-size:20px; color:#94a3b8;">| {{l.org}}</span></h3>
         <ul>
             {% for h in l.highlights %}<li>{{h}}</li>{% endfor %}
         </ul>
@@ -472,7 +486,7 @@ TEMPLATE = """
   </section>
 
   <footer>
-    <p>© {{p.name}} — Portfolio Website</p>
+    <p>© {{p.name}} | Portfolio Website</p>
   </footer>
 
   <script>
