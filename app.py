@@ -46,16 +46,18 @@ portfolio = {
             ]
         },
         {
-            "title": "Dar Ul Isra Youth Halaqah Page",
+            "title": "Dar Ul Isra Youth Halaqas Registration",
             "items": [
-                "Designed and built a dedicated youth halaqah page for the Dar Ul Isra platform with an online registration form, so families can sign young people up for weekly sessions directly from the website.",
-                "Optimised the page for mobile and accessibility, and made registrations easy for the team to review and manage."
+                "Built a multi-step online registration for the mosque's weekly Youth Halaqas (ages 7-18), collecting child details, parent/guardian and emergency contacts, medical information and photography consent, with children placed into separate age and gender groups.",
+                "Supported registering several children in a single submission, a waiting list when groups are full, and a family-grouping preference.",
+                "Integrated Stripe so card details are never handled by the mosque, with a payment link sent only once a place is confirmed."
             ]
         },
         {
-            "title": "Quran Teachers App",
+            "title": "Iqraa Quran School Registration",
             "items": [
-                "Developed an app that supports Quran teachers in managing their teaching and students."
+                "Built the online registration form for the mosque's Quran classes, capturing up to three students per submission with their Quran reading level (Qaida through to Fluent), guardian and emergency contacts, medical details and emergency treatment consent.",
+                "Added attendance and parental-responsibility acknowledgements with a typed digital signature, giving the school a complete, consistent record for each family."
             ]
         },
         {
