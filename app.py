@@ -106,6 +106,10 @@ portfolio = {
 
     "skills_categorized": [
         {
+            "category": "Enterprise & Cloud (OGI)",
+            "items": ['Microsoft Power Platform (Power Apps, Power Automate, Dataverse)', 'Dynamics 365 Customer Service', 'Model-Driven Apps', 'Azure DevOps & CI/CD', 'Microsoft Azure', 'Microsoft Entra ID', 'SharePoint Online', 'REST API Integrations', 'Billing & Finance System Integrations', 'Dynamics 365 Plugin Development', 'React', 'Node.js', 'PostgreSQL', 'Solution Architecture', 'Requirements Gathering', 'UAT & Production Deployments', 'Technical Documentation & Handover Creation', 'Business Process Automation']
+        },
+        {
             "category": "Languages & Web",
             "items": ["Python", "Java", "PHP", "JavaScript", "SQL (MySQL, PostgreSQL)", "HTML", "CSS", "WordPress"]
         },
@@ -128,6 +132,22 @@ portfolio = {
     ],
 
     "experience": [
+        {
+            "role": "Web Developer Intern",
+            "company": "OGI",
+            "dates": "2026",
+            "summary": 'Web Developer Intern with experience delivering enterprise business solutions using Microsoft Power Platform, Dynamics 365, Azure, SharePoint and custom web applications. Contributed to large-scale projects including annual recurring billing automation, Dynamics customer-service enhancements, warehouse operations ticketing, contract-import integrations and the AssetTrack asset management platform. Experienced in Power Apps, Power Automate, Dataverse, Azure DevOps CI/CD, REST API integrations, Azure hosting, technical documentation and solution deployment across development, UAT and production environments.',
+            "projects": [
+                {"title": 'CHN-110 / CR-481 Annual Recurring Billing (Dynamics 365 & BillingBooth)', "role": 'Power Platform / Dynamics Developer', "desc": "Worked on a major change to introduce annual recurring billing into OGI's Dynamics ecosystem, including Dataverse, BillingBooth integration, pricing calculations, Customer Service records, and renewal management. Reviewed and modified business logic, pricing calculations, product synchronisation, Power Automate integrations, and annual contract handling. Worked with BillingBooth APIs, Dynamics plugins, JavaScript web resources, testing, and deployment planning.", "tech": ['Dynamics 365', 'Dataverse', 'Power Automate', 'BillingBooth API', 'JavaScript', 'Azure DevOps', 'Power Platform Solutions']},
+                {"title": 'CHN-069 IP Allocations Visible in Dynamics', "role": 'Dynamics 365 Developer', "desc": 'Designed and implemented the solution to expose Fixed IPv4 and Routed Subnet allocations within Dynamics 365 customer service processes. Added and surfaced fields, updated forms and customer service records, produced HLD documentation, completed testing, and progressed the solution towards UAT and production.', "tech": ['Dynamics 365', 'Dataverse', 'Model-Driven Apps', 'Solution Management', 'UAT Testing']},
+                {"title": 'Warehouse Ticketing System', "role": 'Power Platform Developer', "desc": 'Designed and delivered a complete warehouse operations ticketing system including ticket submission, automated ticket numbering, confirmation emails, status updates, SharePoint integration, UAT deployment, testing plans, and production readiness. Completed change requests from the warehouse team and moved the solution through the release pipeline.', "tech": ['SharePoint Online', 'Power Apps', 'Power Automate', 'Dataverse', 'Azure DevOps', 'CI/CD Pipelines']},
+                {"title": 'PSI Fusion Contract Import Solution', "role": 'Power Platform Developer', "desc": 'Designed and implemented a contract-document integration platform which imports thousands of PDF contract records from PSI Fusion into Dataverse using Power Automate. Delivered both bulk migration and automated daily delta imports, duplicate prevention, metadata management, error handling, and a model-driven app for document retrieval.', "tech": ['Power Automate', 'Dataverse', 'Model-Driven Apps', 'REST APIs', 'JSON', 'Integration Development']},
+                {"title": 'AssetTrack Application Development', "role": 'Full Stack Developer', "desc": 'Developed AssetTrack, an internal asset and certification management platform for OGI engineering teams. Implemented engineer, manager and admin role models, expiry tracking, certification management, Azure deployment architecture, security controls, authentication, database migration planning, and operational processes.', "tech": ['React', 'Node.js', 'Express', 'PostgreSQL', 'Azure App Service', 'Azure Database for PostgreSQL', 'Microsoft Entra ID', 'Azure Key Vault', 'Azure DevOps']},
+                {"title": 'AssetTrack Azure Migration & Security', "role": 'Cloud & Application Developer', "desc": 'Led planning and implementation work to migrate AssetTrack from local Docker infrastructure into Azure. Produced security documentation, designed RBAC models, Azure architecture, database migration strategy, authentication integration, VPN access requirements, and deployment policies.', "tech": ['Microsoft Azure', 'Azure App Services', 'Azure PostgreSQL', 'Azure Key Vault', 'Entra ID', 'Docker', 'Networking & VPN Configuration']},
+                {"title": 'Dynamics 365 Plugin & Solution Development', "role": 'Dynamics Developer', "desc": 'Worked on Dynamics solutions involving Customer Service records, pricing calculations, product synchronisation, order processing, billing integrations, plugin modification and testing, managed solution deployments, Azure DevOps pipeline releases, and UAT and Production promotion activities.', "tech": ['Dynamics 365', 'Plugins', 'Dataverse', 'Azure DevOps', 'Managed Solutions']},
+                {"title": 'Power Platform CI/CD & Environment Management', "role": 'Power Platform Developer', "desc": 'Worked with solution lifecycle management across Development, UAT and Production environments. Managed deployments, connection references, environment variables, Azure DevOps pipelines, managed/unmanaged solutions, solution imports, testing and release governance.', "tech": ['Power Platform', 'Azure DevOps', 'Connection References', 'Environment Variables', 'Managed/Unmanaged Solutions']},
+            ]
+        },
         {
             "role": "Administrative Assistant",
             "company": "HMRC",
@@ -466,11 +486,22 @@ TEMPLATE = """
       <div class="card">
         <h3>{{ex.role}} <span style="font-weight:400; font-size:20px; color:#94a3b8;">at {{ex.company}}</span></h3>
         <p style="font-size:16px; margin-top:-10px; margin-bottom:15px; color:#38bdf8; font-weight:600;">{{ex.dates}}</p>
+        {% if ex.summary %}<p style="font-size:18px; color:#cbd5e1;">{{ex.summary}}</p>{% endif %}
+        {% if ex.highlights %}
         <ul>
             {% for h in ex.highlights %}
               <li>{{h}}</li>
             {% endfor %}
         </ul>
+        {% endif %}
+        {% for pr in ex.projects or [] %}
+          <div style="border-top:1px solid #334155; margin-top:20px; padding-top:15px;">
+            <h4 style="margin:0; color:#f1f5f9;">{{pr.title}}</h4>
+            <p style="font-size:16px; margin:4px 0 10px; color:#38bdf8; font-weight:600;">{{pr.role}}</p>
+            <p style="font-size:17px; color:#cbd5e1; margin:0 0 10px;">{{pr.desc}}</p>
+            <p style="font-size:15px; color:#94a3b8; margin:0;"><strong>Technologies:</strong> {{ pr.tech | join(' · ') }}</p>
+          </div>
+        {% endfor %}
       </div>
     {% endfor %}
 
