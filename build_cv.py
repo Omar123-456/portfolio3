@@ -1,4 +1,5 @@
 """Generate Omar_Elsharoud_CV.docx from the portfolio data in app.py."""
+import os, sys
 from docx import Document
 from docx.shared import Pt, Cm, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
@@ -42,7 +43,20 @@ def sub(title, meta=None, before=5):
 C = WD_ALIGN_PARAGRAPH.CENTER
 para(p["name"].upper(), bold=True, size=20, align=C)
 para("Software Engineer", bold=True, size=11, align=C, after=2)
-para(f'{p["location"]} | {p["email"]} | {p["phone"]}', align=C, size=9.5)
+hdr = para(f'{p["location"]} | {p["email"]} | {p["phone"]}', align=C, size=9.5)
+PORTFOLIO_URL = os.environ.get("PORTFOLIO_URL") or (sys.argv[1] if len(sys.argv) > 1 else "")
+if PORTFOLIO_URL:
+    from docx.oxml import OxmlElement
+    from docx.oxml.ns import qn
+    rid = d.part.relate_to(PORTFOLIO_URL, "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink", is_external=True)
+    hl = OxmlElement("w:hyperlink"); hl.set(qn("r:id"), rid)
+    r = OxmlElement("w:r"); rPr = OxmlElement("w:rPr")
+    u = OxmlElement("w:u"); u.set(qn("w:val"), "single"); rPr.append(u)
+    col = OxmlElement("w:color"); col.set(qn("w:val"), "0563C1"); rPr.append(col)
+    sz = OxmlElement("w:sz"); sz.set(qn("w:val"), "19"); rPr.append(sz)
+    r.append(rPr); t = OxmlElement("w:t"); t.text = "Portfolio: " + PORTFOLIO_URL; r.append(t); hl.append(r)
+    hdr.add_run(" | ").font.size = Pt(9.5)
+    hdr._p.append(hl)
 
 heading("Professional Profile")
 para("Software Engineer with experience delivering enterprise business solutions on Microsoft Power Platform, "
