@@ -46,26 +46,12 @@ portfolio = {
             ]
         },
         {
-            "title": "Dar Ul Isra Youth Halaqas Registration",
-            "items": [
-                "Built a multi-step online registration for the mosque's weekly Youth Halaqas (ages 7-18), collecting child details, parent/guardian and emergency contacts, medical information and photography consent, with children placed into separate age and gender groups.",
-                "Supported registering several children in a single submission, a waiting list when groups are full, and a family-grouping preference.",
-                "Integrated Stripe so card details are never handled by the mosque, with a payment link sent only once a place is confirmed."
-            ]
-        },
-        {
-            "title": "Iqraa Quran School Registration",
-            "items": [
-                "Built the online registration form for the mosque's Quran classes, capturing up to three students per submission with their Quran reading level (Qaida through to Fluent), guardian and emergency contacts, medical details and emergency treatment consent.",
-                "Added attendance and parental-responsibility acknowledgements with a typed digital signature, giving the school a complete, consistent record for each family."
-            ]
-        },
-        {
             "title": "Dar Ul Isra Platform",
             "items": [
-                "Developed and continue to maintain the official community platform using WordPress, acting as the sole technical lead for a digital hub serving a large, highly diverse user base.",
-                "Integrated dynamic backend functionality, including automated prayer timetables, event management calendars, and secure donation gateways.",
-                "Optimised the UI/UX for exceptional accessibility, mobile responsiveness, and technical SEO, ensuring critical information is easily accessible."
+                "Developed and continue to maintain the official website of Dar Ul Isra mosque and community centre (darulisra.org.uk) on WordPress as the sole technical lead, serving a large, diverse community: live prayer times, programmes and events, services, room booking and online donations.",
+                "Built a multi-step Youth Halaqas registration (ages 7-18) capturing child, parent/guardian, emergency, medical and photography-consent details, with age and gender grouping, several children per submission, a waiting list, and Stripe payment so card details are never handled by the mosque.",
+                "Built the Iqraa Quran School registration for up to three students per family, recording Quran reading level, guardian and emergency contacts, medical details and consent with a typed digital signature.",
+                "Optimised the site for accessibility, mobile responsiveness and technical SEO, and supported the community's mobile app for prayer times and event notifications."
             ]
         },
         {
@@ -80,13 +66,12 @@ portfolio = {
         {
             "title": "Align",
             "items": [
-                "Architected and deployed a full-stack marriage compatibility platform featuring a psychometric assessment engine, real-time matching algorithm, and privacy-first photo reveal system built with React, Express 5, SQLite, and Prisma ORM.",
-                "Designed and implemented a multi-journey psychometric assessment flow comprising 40+ adaptive question screens (single-select, multi-select, ranked-choice, points-distribution, timed-response) with conditional branching logic based on user demographics and real-time selections.",
-                "Engineered a weighted compatibility matching algorithm with dealbreaker filtering, bidirectional scoring, and cold-start handling, backed by a normalised relational schema managing users, assessment responses, match pairs, and messaging logs.",
-                "Built a staged photo privacy pipeline using server-side image processing to generate pristine, 30%-blurred, and silhouette variants, progressively revealing profile photos based on mutual match acceptance and journey completion milestones.",
-                "Developed a real-time communication layer using WebSockets for instant messaging, with Agora RTC integration for in-app voice and video calling between matched users.",
-                "Implemented a secure authentication system with JWT tokens, AES-256 encryption for sensitive PII fields, and a face-detection liveness verification flow using the face-api.js library.",
-                "Containerised the application with a multi-stage Dockerfile and deployed to Fly.io with persistent SQLite volumes, automated CI/CD via GitHub Actions, and zero-downtime redeployment on push to main."
+                "Founded and built Align, a halal, privacy-first Muslim marriage platform live on Google Play (App Store in review) and on the web, as a solo full-stack and mobile engineer. Stack: Express and SQLite API, Expo / React Native member app for iOS, Android and browser, and a React 19 + Vite web client for the website, wali portal, community-centre portal and admin console.",
+                "Designed a multi-journey psychometric assessment (40+ adaptive screens with conditional branching) feeding a weighted compatibility engine with dealbreaker filtering, bidirectional scoring and cold-start handling.",
+                "Built a privacy-first member experience: staged photo reveal (blurred and silhouette variants generated server-side), voice notes and in-app voice/video calls via Agora, AES-256 encryption of sensitive PII, JWT authentication, Google/Apple sign-in and face-detection liveness verification.",
+                "Delivered separate wali and community-centre portals, including a native centre portal in the app with an interview and vetting workflow, certificates and member requests, plus an admin console, moderation and ban-appeal tooling.",
+                "Implemented subscriptions and a match-acceptance paywall with in-app purchases on mobile and Stripe on the web, plus gift cards, push notifications (FCM/APNs) and multi-language localisation including Arabic.",
+                "Shipped through Fly.io with persistent SQLite replicated by Litestream and GitHub Actions CI/CD where a push to main is a release; supported by Vitest unit tests, Playwright end-to-end tests and written security, data-protection and launch-readiness reviews."
             ]
         },
         {

@@ -75,8 +75,7 @@ for ex in p["experience"][1:]:
     for h in ex["highlights"]: bullet(h)
 
 heading("Technical Projects")
-order = ["Bayan Academy Website", "Dar Ul Isra Platform", "Dar Ul Isra Youth Halaqas Registration",
-         "Iqraa Quran School Registration", "WhatsApp AI Automation SaaS", "Align", "AccomFix",
+order = ["Bayan Academy Website", "Dar Ul Isra Platform", "Align", "WhatsApp AI Automation SaaS", "AccomFix",
          "CampusTasker", "QuizCraft", "Mental Health Support Platform"]
 byt = {x["title"]: x for x in p["projects"]}
 for t in order:
