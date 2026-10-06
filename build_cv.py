@@ -44,7 +44,7 @@ C = WD_ALIGN_PARAGRAPH.CENTER
 para(p["name"].upper(), bold=True, size=20, align=C)
 para("Software Engineer", bold=True, size=11, align=C, after=2)
 hdr = para(f'{p["location"]} | {p["email"]} | {p["phone"]}', align=C, size=9.5)
-PORTFOLIO_URL = os.environ.get("PORTFOLIO_URL") or (sys.argv[1] if len(sys.argv) > 1 else "")
+PORTFOLIO_URL = os.environ.get("PORTFOLIO_URL") or (sys.argv[1] if len(sys.argv) > 1 else "https://portfolio3-pzof.onrender.com/")
 if PORTFOLIO_URL:
     from docx.oxml import OxmlElement
     from docx.oxml.ns import qn
